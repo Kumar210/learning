@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Comforter&family=Crimson+Text&family=Josefin+Sans:wght@100&family=Lato:ital,wght@0,400;1,300&family=Meow+Script&family=Montserrat:ital,wght@0,600;1,300&family=Rubik:ital,wght@0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Cabin Sketch", cursive;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+/* .relativeContainer {
+  position: relative;
+} */
+
+.abContainerMain {
+  margin-left: 10px;
+}
+
+/* navProjectForm */
+.mantine-17r3jlr {
+  padding-bottom: 12px;
+}
+h5 {
+  color: white;
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media only screen and (max-width: 600px) {
+  .abContainerSideMenu {
+    display: none;
+  }
+  .mantine-13jfpqk {
+    min-height: auto;
+  }
+  /* .abContainerMain {
+    margin-left: 15px;
+    width: 100%;
+  } */
+}
+/* 767px */
+/* 1320px */
+@media (max-width: 1200px) {
+  .BtnCointainer {
+    display: none;
+  }
+}
+
+/* Funds */
+
+.fundProjectCointainer {
+  box-sizing: border-box;
+  /* position: absolute; */
+  width: 421px;
+  height: 146px;
+  left: calc(50% - 421px / 2 - 649.5px);
+  top: 579px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 220, 159, 0.3) 34.7%,
+    rgba(188, 44, 216, 0.06) 100%
+  );
+  opacity: 0.35;
+  box-shadow: 0px 4px 35px #2af6ff;
+  backdrop-filter: blur(10px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 4px;
+}
+
+.mantine-17r3jlr {
+  padding-bottom: 12px;
+}
+.Chart_SwapPageCointainer {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 220, 159, 0.3) 34.7%,
+    rgba(188, 44, 216, 0.06) 100%
+  );
+  /* min-width: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  top: 0.5em;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 15px #2af6ff;
+}
+.SwapPageCointainer {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 220, 159, 0.3) 34.7%,
+    rgba(188, 44, 216, 0.06) 100%
+  );
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0.5em;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 15px #2af6ff;
+}
+.LqPageCointainer {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 220, 159, 0.3) 34.7%,
+    rgba(188, 44, 216, 0.06) 100%
+  );
+  min-width: 500px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0.5em;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 15px #2af6ff;
+}
+@media (max-width: 770px) {
+  .SwapPageCointainer {
+    min-width: 350px;
+    margin-left: -120px;
+    backdrop-filter: none;
+  }
+  .LqPageCointainer {
+    min-width: 350px;
+    /* margin-left: -30px; */
+    backdrop-filter: none;
+  }
+  .Chart_SwapPageCointainer {
+    backdrop-filter: none;
+  }
+}
+
+.SwapPageCointainer1 {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 220, 159, 0.3) 34.7%,
+    rgba(188, 44, 216, 0.06) 100%
+  );
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin-top: -1em;
+  bottom: 0; */
+  margin-left: 13em;
+  backdrop-filter: blur(10px);
+}
+/* SwapPage BagroundCointainer */
+
+.ParentCointainer {
+  /* background: red; */
+  width: 90%;
+  height: 110%;
+  background: url(/assets/images/fwdyociconsets/SwapBackGround.svg);
+  background-repeat: no-repeat;
+  background-size: 40em, 40em;
+}
+/* fund page Buy PopUp input field */
+.input {
+  border: none;
+  border-bottom: 1px dashed #ffffff;
+  padding: 5px 10px;
+  outline: none;
+  width: 70%;
+  background: transparent;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  /* transition: text-indent 0.4s 0.4s ease;  */
+  /* text-indent: -100%; */
+  opacity: 1;
+}
+.swapinput::-webkit-input-placeholder {
+  font-size: 13px;
+}
+.swapinput {
+  width: 20%;
+  border: 1px solid #97fbff;
+  background-color: #28882b;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 2px;
+}
+.swapinput:hover {
+  background-color: #165a19;
+}
+.swapinput1 {
+  width: 20%;
+  border: 1px solid #97fbff;
+  background-color: #649e37;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 2px;
+}
+.swapinput1:hover {
+  background-color: #50871c;
+}
+/* Fund page infinityScrool bottom Scrool-Bar */
+.mantine-nsdj {
+  width: 100%;
+}
+/* Nav bar Cointainer */
+.mantine-x6lp0q {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.mantine-13jfpqk {
+  padding-top: 0;
+}
+/* .mantine-13jfpqk { */
+/* padding-bottom: 15px;*/
+/* padding-top: 5px; */
+/* } */
+
+/* @media (max-width: 400px) {
+  .mantine-x6lp0q {
+    padding-left: 0;
+    padding-right: 0;
+  }
+} */
+/* Chart BG */
+
+/* .ChartBG {
+  width: 90%;
+  height: 110%;
+  background: url(/assets/images/fwdyociconsets/SwapBackGround.svg);
+  background-repeat: no-repeat;
+  background-size: 40em, 40em;
+} */
+.glowingButton {
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    -webkit-box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    -webkit-box-shadow: 0 0 4px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    -webkit-box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@-moz-keyframes glowing {
+  0% {
+    background-color: #16b5ca;
+    -moz-box-shadow: 0 0 3px #1ecbe2;
+  }
+  50% {
+    background-color: #17b4e4;
+    -moz-box-shadow: 0 0 20px #006eff;
+  }
+  100% {
+    background-color: #24a8c9;
+    -moz-box-shadow: 0 0 3px #19afeb;
+  }
+}
+
+@-o-keyframes glowing {
+  0% {
+    background-color: #1cb5e4;
+    box-shadow: 0 0 3px #188dc4;
+  }
+  50% {
+    background-color: #0a9dca;
+    box-shadow: 0 0 40px #0d98f5;
+  }
+  100% {
+    background-color: #0cdbe2;
+    box-shadow: 0 0 3px #0fbaee;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #1684ce;
+    box-shadow: 0 0 3px #0db2db;
+  }
+  50% {
+    background-color: #18b8e9;
+    box-shadow: 0 0 20px #20c9f3;
+  }
+  100% {
+    background-color: #19dfdf;
+    box-shadow: 0 0 3px #12c4e4;
+  }
+}
+
+/* nav bar */
+/* .mantine-15z8tya {
+  position: fixed;
+} */
+#nprogress .bar {
+  background: rgb(10, 182, 182) !important;
+  padding: 0 5px !important;
+  height: 4px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 100px rgb(10, 182, 182), 0 0 55px rgb(10, 182, 182);
+}
+
+/* #nprogress .spinner-icon {
+  border-top-color: rgb(10, 182, 182);
+  border-left-color: rgb(10, 182, 182);
+} */
+#nprogress .bar {
+  background: rgb(10, 182, 168) !important;
+  padding: 0 5px !important;
+  height: 6px !important;
+  border-radius: 20px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 100px rgb(10, 182, 182), 0 0 55px rgb(10, 182, 182);
+}
+
+#nprogress .spinner-icon {
+  border-top-color: rgb(10, 182, 182);
+  border-left-color: rgb(10, 182, 182);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: rgb(2, 138, 138); 
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(122, 124, 124);
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(122, 124, 124);
+  border-radius: 20;
+}
+.mantine-3m2ku4 {
+  background: transparent;
+}
+.mantine-1nz2bxt {
+  background: transparent;
+}
+/* .stakeModal {
+  background: rgba(33, 98, 141, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(33, 98, 141, 0.3);
+} */
+/* .mantine-jz03w5 {
+  background: transparent;
+} */
+/* .mantine-1gh8mmw {
+  background: transparent;
+} */
+
+@media (max-width: 1342px) {
+  .tradeLine1 {
+    width: 430px;
+  }
+  .tradeLine2 {
+    width: 390px;
+  }
+  .tradeLine3 {
+    width: 250px;
+  }
+  .space {
+    display: none;
+  }
+}
+@media (max-width: 1250px) {
+  .tradeLine1 {
+    width: 250px;
+  }
+  .tradeLine2 {
+    width: 350px;
+  }
+  .space {
+    display: none;
+  }
+  .space2 {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .tradeLine1 {
+    width: 300px;
+  }
+  .tradeLine2 {
+    width: 250px;
+  }
+  .space {
+    display: none;
+  }
+  .space2 {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .tradeLine1 {
+    width: 250px;
+  }
+  .tradeLine2 {
+    width: 250px;
+  }
+  .space {
+    display: none;
+  }
+  .space2 {
+    display: none;
+  }
+}
+
+/* 1068 */
