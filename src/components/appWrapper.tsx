@@ -8,7 +8,7 @@ const AppWrapper = ({ children }: any) => (
       withNormalizeCSS
       theme={{
         fontFamily: "'Kanit', sans-serif",
-        colorScheme: "dark",
+        colorScheme: "light",
       }}>
       {children}
     </MantineProvider>

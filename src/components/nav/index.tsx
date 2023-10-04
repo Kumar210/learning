@@ -2,15 +2,11 @@ import React from "react";
 import {
   createStyles,
   Header,
-  HoverCard,
   Group,
-  Button,
   Divider,
-  Center,
   Box,
   Burger,
   Drawer,
-  Menu,
   Container,
   Text,
   Grid,
@@ -19,23 +15,10 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import {
   IconChevronDown,
-  IconWallet,
   IconCoin,
-  // IconHome,
-  IconCoins,
   IconChartBar,
-  IconRepeat,
-  IconChartAreaLine,
-  IconBusinessplan,
   IconReportMoney,
   IconPhoto,
-  IconInfoSquare,
-  IconLicense,
-  IconFile,
-  IconPhotoHeart,
-  IconPhotoStar,
-  IconMapPin,
-  IconWorldUpload
 } from "@tabler/icons";
 import Link from "next/link";
 // import Router from "next/router";
@@ -61,8 +44,8 @@ const useStyles = createStyles((theme) => ({
     paddingRight: theme.spacing.md,
     textDecoration: "none",
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontWeight: 500,
-    fontSize: theme.fontSizes.sm,
+    fontWeight: 1000,
+    fontSize: theme.fontSizes.lg,
     [theme.fn.smallerThan("sm")]: {
       height: 42,
       display: "flex",
@@ -207,15 +190,18 @@ export function HeaderMegaMenu() {
           <Group className={classes.imgHidden}>
             <Link href="/">
               <Image
-                src="/assets/images/fwdyociconsets/YOC_Logo_adjusted-removebg (2).ico"
+                src="/assets/android-chrome-192x192.png"
                 // src="/assets/images/fwdyociconsets/YOC_Logo_adjusted-removebg.png"
-                width={150}
-                height={70}
+                width={70}
+                height={50}
                 alt="ImageName"
                 style={{
                   cursor: "pointer",
+                  padding: 5,
+                  borderRadius: '50%'
+
                   // background: 'white'
-                  marginTop: -20
+                  // marginTop: -20
                 }}
               />
             </Link>
@@ -246,11 +232,11 @@ export function HeaderMegaMenu() {
             </Link> */}
             <Link
               href={{
-                pathname: "/funds",
+                pathname: "/",
               }}>
-              <a className={classes.link}>Projects</a>
+              <a className={classes.link}>Home</a>
             </Link>
-            <Menu trigger="hover" exitTransitionDuration={0} withArrow width={150}>
+            {/* <Menu trigger="hover" exitTransitionDuration={0} withArrow width={150}>
               <Menu.Target>
                 <Center>
                   <span className={classes.link}>Trade</span>
@@ -302,21 +288,26 @@ export function HeaderMegaMenu() {
                   </Menu.Item>
                 </Link>
               </Menu.Dropdown>
-            </Menu>
+            </Menu> */}
             <Link
               href={{
                 pathname: "/stake",
               }}>
-              <a className={classes.link}>Stakes</a>
+              <a className={classes.link}>Product</a>
             </Link>
             <Link
               href={{
-                pathname: "/farms",
+                pathname: "/",
               }}>
-              <a className={classes.link}>Farms</a>
+              <a className={classes.link}>Contatus</a>
             </Link>
-
-            <Menu trigger="hover" withArrow exitTransitionDuration={0}>
+            <Link
+              href={{
+                pathname: "/",
+              }}>
+              <a className={classes.link}>About</a>
+            </Link>
+            {/* <Menu trigger="hover" withArrow exitTransitionDuration={0}>
               <Menu.Target>
                 <Center>
                   <span className={classes.link}>NFT</span>
@@ -357,8 +348,8 @@ export function HeaderMegaMenu() {
                 </Link>
 
               </Menu.Dropdown>
-            </Menu>
-            <Menu trigger="hover" withArrow exitTransitionDuration={0}>
+            </Menu> */}
+            {/* <Menu trigger="hover" withArrow exitTransitionDuration={0}>
               <Menu.Target>
                 <Center>
                   <span className={classes.link}>Info</span>
@@ -366,14 +357,7 @@ export function HeaderMegaMenu() {
                 </Center>
               </Menu.Target>
               <Menu.Dropdown>
-                {/* <Link
-                  href={{
-                    pathname: "/info",
-                  }}>
-                  <Menu.Item>
-                    <p className={classes.link}>Tokenomics</p>
-                  </Menu.Item>
-                </Link> */}
+
                 <a
                   href="https://yoc.gitbook.io/tokenomics/" target="_blank">
                   <Menu.Item icon={<IconInfoSquare />} >
@@ -402,10 +386,10 @@ export function HeaderMegaMenu() {
                   </Menu.Item>
                 </a>
               </Menu.Dropdown>
-            </Menu>
+            </Menu> */}
 
           </Group>
-          <Group
+          {/* <Group
             className="BtnCointainer"
           >
             <Menu trigger="hover" exitTransitionDuration={0} withArrow >
@@ -503,10 +487,10 @@ export function HeaderMegaMenu() {
               rightIcon={<IconWallet />}>
               yjuykiuk
             </Button>
-          </Group>
+          </Group> */}
 
 
-          <Group className={classes.hidden_BtnCointainer}>
+          {/* <Group className={classes.hidden_BtnCointainer}>
             <Grid>
               <Grid.Col span={6}>
                 <HoverCard>
@@ -532,26 +516,7 @@ export function HeaderMegaMenu() {
                 </HoverCard>
               </Grid.Col>
               <Grid.Col span={6}>
-                {/* {WalletConnecting ? (
-                  <Button
-                    onClick={() => Walletdiconnect()}
-                    variant="default"
-                    className={classes.hiddenDesktop}
-                    size="xs"
-                    sx={{
-                      width: 100,
-                    }}>
-                    Connected
-                  </Button>
-                ) : (
-                  <Button
-                    variant="default"
-                    className={classes.hiddenDesktop}
-                    onClick={() => setPoPup(true)}
-                    size="xs">
-                    Connect to wallet
-                  </Button>
-                )} */}
+
                 <Button
                   size="xs"
 
@@ -563,7 +528,7 @@ export function HeaderMegaMenu() {
                 </Button>
               </Grid.Col>
             </Grid>
-          </Group>
+          </Group> */}
 
           <Burger
             ml={10}

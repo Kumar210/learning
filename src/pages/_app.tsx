@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Router from 'next/router';
 import { ToastContainer } from "react-toastify";
+import Footer from '../components/Footer/index'
 type Props = AppProps & {
   pageProps: any;
 };
@@ -34,7 +35,7 @@ function MyApp({ Component, pageProps }: Props) {
   return (
     <>
       <Head>
-        <title>YOC</title>
+        <title>Rani Engineering Works</title>
       </Head>
       {
         !loading ?
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }: Props) {
             <AppShell>
               <HeaderMegaMenu />
               <Component {...pageProps} />
+              <Footer />
             </AppShell>
             <ToastContainer
               limit={1}

@@ -1,14 +1,12 @@
 /* eslint-disable import/default */
 import React from "react";
-// import Head from "next/head";
-// import { HeaderMegaMenu } from '../components/Header/NavBar/index'
-import { Step, Stepper } from 'react-form-stepper';
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Slider from "src/components/Home/Slider";
+import ProductShow from '../components/Home/ProductShow'
 export default function Home(): JSX.Element {
   return (
     <>
-      <Stepper activeStep={1}>
+      {/* <Stepper activeStep={1}>
         <Step label="Children Step 1" />
         <Step label="Children Step 2" />
         <Step label="Children Step 3" />
@@ -18,9 +16,9 @@ export default function Home(): JSX.Element {
         <Step label="Children Step 1" />
         <Step label="Children Step 2" />
         <Step label="Children Step 3" />
-      </Stepper>
+      </Stepper> */}
 
-      <Carousel
+      {/* <Carousel
         infiniteLoop
         autoPlay
         interval={3000}
@@ -48,9 +46,9 @@ export default function Home(): JSX.Element {
           }} src="https://images.everydayhealth.com/images/apples-101-about-1440x810.jpg?sfvrsn=f86f2644_1" />
           <p className="legend">Legend 3</p>
         </div>
-      </Carousel>
-
-
+      </Carousel> */}
+      <Slider />
+      <ProductShow />
     </>
   );
 }

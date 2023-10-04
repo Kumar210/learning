@@ -37,6 +37,7 @@
     "@next/bundle-analyzer": "^12.2.0",
     "@reduxjs/toolkit": "^1.8.1",
     "@tabler/icons": "^1.105.0",
+    "@tabler/icons-react": "^2.38.0",
     "@types/lodash": "^4.14.182",
     "@types/luxon": "^3.0.2",
     "@types/react-sticky": "^6.0.4",
