@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import "../styles/PopUp/Pop.css";
-import "../styles/ProjectRegisterForm/projectRF.css";
 import type { AppProps } from "next/app";
 import React, { useEffect, useState } from "react";
 import "regenerator-runtime/runtime";
@@ -16,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Router from 'next/router';
 import { ToastContainer } from "react-toastify";
-import Footer from '../components/Footer/index'
+import Footer from '../components/Footer2/index'
 type Props = AppProps & {
   pageProps: any;
 };
@@ -41,7 +40,7 @@ function MyApp({ Component, pageProps }: Props) {
         !loading ?
           <Wrapper>
             <AppShell>
-              <HeaderMegaMenu />
+              {/* <HeaderMegaMenu /> */}
               <Component {...pageProps} />
               <Footer />
             </AppShell>
