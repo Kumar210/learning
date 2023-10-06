@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   createStyles,
   Header,
@@ -8,20 +8,18 @@ import {
   Burger,
   Drawer,
   Container,
-  Text,
   Grid,
   Image,
+  NumberInput,
+  Title,
+  TextInput,
+  Button,
+  Textarea,
+  Modal,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconChevronDown,
-  IconCoin,
-  IconChartBar,
-  IconReportMoney,
-  IconPhoto,
-} from "@tabler/icons";
+
 import Link from "next/link";
-// import Router from "next/router";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -172,15 +170,14 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-// const wallet = new Wallet({
-//   createAccessKeyFor: "dev-1675849983997-69455845833622",
-// });
 
 
 
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
+
   const { classes, theme } = useStyles();
 
   return (
@@ -191,7 +188,6 @@ export function HeaderMegaMenu() {
             <Link href="/">
               <Image
                 src="/assets/android-chrome-192x192.png"
-                // src="/assets/images/fwdyociconsets/YOC_Logo_adjusted-removebg.png"
                 width={70}
                 height={50}
                 alt="ImageName"
@@ -209,7 +205,7 @@ export function HeaderMegaMenu() {
           <Group className={classes.logo}>
             <Link href="/">
               <img
-                src="/assets/images/fwdyociconsets/YOC_Logo.svg"
+                src="/assets/android-chrome-192x192.png"
                 width={50}
                 height={50}
                 alt="ImageName"
@@ -224,311 +220,40 @@ export function HeaderMegaMenu() {
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}>
-            {/* <Link
-              href={{
-                pathname: "/",
-              }}>
-              <a className={classes.link}>Home</a>
-            </Link> */}
+
             <Link
               href={{
                 pathname: "/",
               }}>
               <a className={classes.link}>Home</a>
             </Link>
-            {/* <Menu trigger="hover" exitTransitionDuration={0} withArrow width={150}>
-              <Menu.Target>
-                <Center>
-                  <span className={classes.link}>Trade</span>
-                  <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-                </Center>
-              </Menu.Target>
-              <Menu.Dropdown>
 
-                <Link
-                  href={{
-                    pathname: "/yusdminting",
-                  }}>
-                  <Menu.Item icon={<IconCoins />}  >
-                    <Text size={"xs"} style={{ color: 'white' }} >YUSD</Text>
-                  </Menu.Item>
-                </Link>
-                <Link
-                  href={{
-                    pathname: "/swap",
-                  }}>
-                  <Menu.Item icon={<IconRepeat />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Swap</Text>
-
-                  </Menu.Item>
-                </Link>
-                <Link
-                  href={{
-                    pathname: "/charts",
-                  }}>
-                  <Menu.Item icon={<IconChartAreaLine />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Charts</Text>
-
-                  </Menu.Item>
-                </Link>
-                <Link
-                  href={{
-                    pathname: "/liquidity",
-                  }}>
-                  <Menu.Item icon={<IconBusinessplan />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Liquidity</Text>
-                  </Menu.Item>
-                </Link>
-                <Link
-                  href={{
-                    pathname: "/wallet",
-                  }}>
-                  <Menu.Item icon={<IconWallet />}>
-                    <Text size={"xs"} style={{ color: 'white' }} >Trade Projects</Text>
-                  </Menu.Item>
-                </Link>
-              </Menu.Dropdown>
-            </Menu> */}
             <Link
               href={{
-                pathname: "/stake",
+                pathname: "/product",
               }}>
               <a className={classes.link}>Product</a>
             </Link>
-            <Link
-              href={{
-                pathname: "/",
-              }}>
+            <Box
+              sx={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                setModalOpen(true)
+              }}
+            >
               <a className={classes.link}>Contatus</a>
-            </Link>
+            </Box>
             <Link
               href={{
-                pathname: "/",
+                pathname: "/about",
               }}>
               <a className={classes.link}>About</a>
             </Link>
-            {/* <Menu trigger="hover" withArrow exitTransitionDuration={0}>
-              <Menu.Target>
-                <Center>
-                  <span className={classes.link}>NFT</span>
-                  <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-                </Center>
-              </Menu.Target>
-              <Menu.Dropdown>
-                <Link
-                  href={{
-                    // pathname: "/mynft",
-                    pathname: '/Soon'
-                  }}>
-                  <Menu.Item icon={<IconWorldUpload />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Explore</Text>
-                  </Menu.Item >
-                </Link>
-                <Link
-                  href={{
-                    // pathname: "/nft",
-                    pathname: '/Soon'
 
-                  }}>
-                  <Menu.Item icon={<IconPhotoHeart />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Mint NFTs</Text>
-
-                  </Menu.Item>
-                </Link>
-
-                <Link
-                  href={{
-                    // pathname: "/mynft",
-                    pathname: '/Soon'
-
-                  }}>
-                  <Menu.Item icon={<IconPhotoStar />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >My NFTs</Text>
-                  </Menu.Item>
-                </Link>
-
-              </Menu.Dropdown>
-            </Menu> */}
-            {/* <Menu trigger="hover" withArrow exitTransitionDuration={0}>
-              <Menu.Target>
-                <Center>
-                  <span className={classes.link}>Info</span>
-                  <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-                </Center>
-              </Menu.Target>
-              <Menu.Dropdown>
-
-                <a
-                  href="https://yoc.gitbook.io/tokenomics/" target="_blank">
-                  <Menu.Item icon={<IconInfoSquare />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Tokenomics</Text>
-                  </Menu.Item>
-                </a>
-
-                <a
-                  href=" https://yoc.gitbook.io/docs/" target="_blank">
-                  <Menu.Item icon={<IconLicense />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Docs</Text>
-
-                  </Menu.Item>
-                </a>
-                <a
-                  href="https://yoc.gitbook.io/white-paper/" target="_blank">
-                  <Menu.Item icon={<IconFile />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >White Paper</Text>
-
-                  </Menu.Item>
-                </a>
-                <a
-                  href="https://yoc.gitbook.io/road-map/" target="_blank">
-                  <Menu.Item icon={<IconMapPin />} >
-                    <Text size={"xs"} style={{ color: 'white' }} >Road Map</Text>
-                  </Menu.Item>
-                </a>
-              </Menu.Dropdown>
-            </Menu> */}
 
           </Group>
-          {/* <Group
-            className="BtnCointainer"
-          >
-            <Menu trigger="hover" exitTransitionDuration={0} withArrow >
-              <Menu.Target>
-                <Center>
-                  <Button size="xs" variant="outline" color="teal.2">
-                    <img height={50} width={50} src="/assets/images/fwdyociconsets/NEAR-Protocol-Crypto-Logo.png" />
-                  </Button>
-                </Center>
-              </Menu.Target>
-              <Menu.Dropdown>
-                <a
-                  href="http://www.yoc.fund/bsc" target="_blank">
-                  <Menu.Item>
 
-                    <span className={classes.link}><img height={20} width={20} src="/assets/images/fwdyociconsets/bnb-bnb-logo.svg" />&emsp;BSC</span>
-                  </Menu.Item>
-                </a>
-                <Menu.Item>
-                  <a
-                    href="http://www.yoc.fund/eth" target="_blank">
-                    <span className={classes.link}><img height={20} width={20} src="/assets/images/fwdyociconsets/ethereum (1).svg" />&emsp;ETH</span>
-                  </a>
-                </Menu.Item>
-                <Menu.Item>
-                  <a
-                    href="http://www.yoc.so" target="_blank">
-                    <span className={classes.link}><img height={20} width={20} src="/assets/images/fwdyociconsets/solana-sol-logo.svg" />&emsp;SOL</span>
-                  </a>
-                </Menu.Item>
-              </Menu.Dropdown>
-            </Menu>
-            <HoverCard shadow="md" withArrow>
-              <HoverCard.Target>
-
-                <Button
-                  variant="outline"
-                  color="teal.2"
-                  rightIcon={
-                    //  <IconCoin color={theme.colors.red[6]} />
-                    <img
-                      // className={classes.img1}
-                      src="/assets/images/fwdyociconsets/YOCn_Icon_White.png"
-                      width="25px"
-                      height="20px"
-                      alt="ImageName"
-                    />
-                  }
-
-                  size="xs"
-                >
-                  th
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Text size="sm">
-                  tth
-                </Text>
-              </HoverCard.Dropdown>
-            </HoverCard>
-            <HoverCard shadow="md" withArrow>
-              <HoverCard.Target>
-                <Button
-                  variant="outline"
-                  color="teal.2"
-                  size="xs"
-
-                  // title={`YOCn: ${dollarUSLocale.format(Number(Balance)?.toFixed(6))}`}
-                  rightIcon={
-
-                    //   <IconCoin color={theme.colors.red[6]} />
-                    <img
-                      // className={classes.img1}
-                      src="/assets/images/fwdyociconsets/YOCn_Icon_White.png"
-                      width="25px"
-                      height="20px"
-                      alt="ImageName"
-                    />
-                  }
-                >
-                  rhtgh
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Text size="sm">
-                  tgyh
-                </Text>
-              </HoverCard.Dropdown>
-            </HoverCard>
-            <Button
-              size="xs"
-
-              variant="outline"
-              color="teal.2"
-              rightIcon={<IconWallet />}>
-              yjuykiuk
-            </Button>
-          </Group> */}
-
-
-          {/* <Group className={classes.hidden_BtnCointainer}>
-            <Grid>
-              <Grid.Col span={6}>
-                <HoverCard>
-                  <HoverCard.Target>
-
-                    <Button
-                      variant="default"
-                      className={classes.hiddenDesktop}
-                      size="xs"
-                      radius="lg"
-                      // rightIcon={<IconCoin color={theme.colors.blue[6]} />}
-                      sx={{
-                        width: 100,
-                      }}>
-                      {`YOCn: `}
-                    </Button>
-                  </HoverCard.Target>
-                  <HoverCard.Dropdown>
-                    {`YOCn: `}
-                    <br />
-                    {`YOCn value: $`}
-                  </HoverCard.Dropdown>
-                </HoverCard>
-              </Grid.Col>
-              <Grid.Col span={6}>
-
-                <Button
-                  size="xs"
-
-                  className={classes.hiddenDesktop}
-                  variant="default"
-                  radius={"xl"}
-                >
-                  gfjy
-                </Button>
-              </Grid.Col>
-            </Grid>
-          </Group> */}
 
           <Burger
             ml={10}
@@ -544,7 +269,7 @@ export function HeaderMegaMenu() {
         onClose={closeDrawer}
         size="md"
         padding="md"
-        title="YOC"
+        title="Rani Engineering Works"
         className={classes.hiddenDesktop}
         zIndex={1000000}>
         {/* <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md"> */}
@@ -576,49 +301,20 @@ export function HeaderMegaMenu() {
               alignItems: 'center',
               marginLeft: '20px'
             }} >
-              <IconCoin />
+              {/* <IconCoin /> */}
               <Link
                 href={{
-                  pathname: "/funds",
+                  pathname: "/",
                 }}>
                 <a onClick={() => closeDrawer()} className={classes.link}>
-                  Projects
+                  Home
                 </a>
               </Link>
             </Box>
 
           </Grid.Col>
-          <Grid.Col xs={12}>
-
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }} >
-              <IconChartBar
-                style={{
-                  marginLeft: "20px",
-                  color: 'white'
-                }}
-              />
-              <Text
-
-                className={classes.link}>
-
-                Trade{" "}
-                <IconChevronDown
-                  color="cyan"
-                  size={20}
-                  style={{
-                    marginLeft: "20px",
-                  }}
-                />
-              </Text>
-
-            </Box>
 
 
-          </Grid.Col>
           <Grid.Col xs={12}>
             <Box sx={{
               display: 'flex',
@@ -626,17 +322,33 @@ export function HeaderMegaMenu() {
               alignItems: 'center',
               marginLeft: '20px'
             }} >
-              <IconCoin />
+              {/* <IconCoin /> */}
               <Link
                 href={{
-                  pathname: "/stake",
+                  pathname: "/product",
                 }}>
-
-
                 <a onClick={() => closeDrawer()} className={classes.link}>
-                  Stakes
+                  Product
                 </a>
               </Link>
+            </Box>
+
+          </Grid.Col>
+          <Grid.Col xs={12}>
+            <Box sx={{
+              display: 'flex',
+              // justifyContent: 'center',
+              alignItems: 'center',
+              marginLeft: '20px'
+            }} >
+              {/* <IconCoin /> */}
+              <Box onClick={() => {
+                setModalOpen(true)
+              }}>
+                <a onClick={() => closeDrawer()} className={classes.link}>
+                  Contact Us
+                </a>
+              </Box>
             </Box>
 
           </Grid.Col>
@@ -647,114 +359,23 @@ export function HeaderMegaMenu() {
               alignItems: 'center',
               marginLeft: '20px'
             }} >
-              <IconReportMoney />
+              {/* <IconCoin /> */}
               <Link
                 href={{
-                  pathname: "/farms",
+                  pathname: "/about",
                 }}>
                 <a onClick={() => closeDrawer()} className={classes.link}>
-                  Farms
+                  About
                 </a>
               </Link>
             </Box>
 
           </Grid.Col>
-          <Grid.Col xs={12}>
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginLeft: '20px'
-            }} >
-              <IconCoin />
-              <Link
-                href={{
-                  pathname: "/funds",
-                }}>
-                <a onClick={() => closeDrawer()} className={classes.link}>
-                  Projects
-                </a>
-              </Link>
-            </Box>
-
-          </Grid.Col>
-          <Grid.Col xs={12}>
-
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }} >
-              <IconPhoto
-                style={{
-                  marginLeft: "20px",
-                  color: 'white'
-                }}
-              />
-              <Text
-
-                className={classes.link}>
-                NFT{" "}
-                <IconChevronDown
-                  color="cyan"
-                  size={20}
-                  style={{
-                    marginLeft: "20px",
-                  }}
-                />
-              </Text>
-
-            </Box>
 
 
-          </Grid.Col>
 
 
-          {/* <Grid.Col xs={12}>
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginLeft: '20px'
-            }} >
-              <IconInfoCircle />
-              <Link
-                href={{
-                  pathname: "/info",
-                }}>
-                <a onClick={() => closeDrawer()} className={classes.link}>
-                  Info
-                </a>
-              </Link>
-            </Box>
 
-          </Grid.Col> */}
-
-          <Grid.Col xs={12}>
-
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }} >
-
-              <Text
-
-                className={classes.link}>
-                Info{" "}
-                <IconChevronDown
-                  color="cyan"
-                  size={20}
-                  style={{
-                    marginLeft: "20px",
-                  }}
-                />
-              </Text>
-
-            </Box>
-
-
-          </Grid.Col>
 
           <Divider
             my="sm"
@@ -764,6 +385,53 @@ export function HeaderMegaMenu() {
 
         </Grid>
       </Drawer>
+      <Modal
+        closeOnClickOutside={false}
+        transition="fade"
+        transitionDuration={300}
+        transitionTimingFunction="ease"
+        overlayColor={
+          theme.colorScheme === "dark"
+            ? theme.colors.dark[9]
+            : theme.colors.gray[2]
+        }
+        overlayOpacity={0.55}
+        overlayBlur={3}
+        size="md"
+        opened={modalOpen}
+        onClose={() => {
+          setModalOpen(false)
+        }}
+        overflow="outside"
+        style={{
+          borderRadius: "20px",
+        }}
+        title={<Title order={4}>Enquiry</Title>}
+      >
+        <Grid>
+          <Grid.Col xs={6}>
+            <NumberInput hideControls placeholder='Enter your Number' label="Phone Number" />
+
+          </Grid.Col>
+          <Grid.Col xs={6}>
+            <TextInput placeholder='Enter your Name' label="Name" />
+
+          </Grid.Col>
+          <Grid.Col xs={12}>
+            <Textarea placeholder='Describe Your Requirements in Detail' label="Name" />
+
+          </Grid.Col>
+          <Grid.Col xs={12}>
+            <Group position='center'>
+
+              <Button variant='gradient' >
+                Enquiry
+              </Button>
+            </Group>
+          </Grid.Col>
+        </Grid>
+
+      </Modal>
 
     </Box>
   );

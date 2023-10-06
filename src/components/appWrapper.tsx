@@ -9,7 +9,9 @@ const AppWrapper = ({ children }: any) => (
       theme={{
         fontFamily: "'Kanit', sans-serif",
         colorScheme: "light",
-      }}>
+      }}
+
+    >
       {children}
     </MantineProvider>
   </>

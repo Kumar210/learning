@@ -3,13 +3,17 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Slider from "src/components/Home/Slider";
 import ProductShow from '../components/Home/ProductShow'
+import RatingsandReviews from '../components/RatingPage/index'
+import Enquiry from '../components/enquiry/index'
+
 export default function Home(): JSX.Element {
   return (
     <>
-
-
-      {/* <Slider />
-      <ProductShow /> */}
+      <Slider />
+      <ProductShow />
+      <Enquiry />
+      <RatingsandReviews />
+      {/* <Progress value={50} animate /> */}
     </>
   );
 }

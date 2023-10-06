@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: Props) {
         !loading ?
           <Wrapper>
             <AppShell>
-              {/* <HeaderMegaMenu /> */}
+              <HeaderMegaMenu />
               <Component {...pageProps} />
               <Footer />
             </AppShell>

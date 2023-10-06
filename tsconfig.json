@@ -46,7 +46,7 @@
     "**/*.tsx",
     "**/*.less",
     "src/script/sitemap.xml.mjs"
-  ],
+, "src/components/ReviewCard"  ],
   "exclude": ["node_modules"],
   "rules": {
     "no-console": ["warn"],

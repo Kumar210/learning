@@ -1,5 +1,5 @@
 import { createStyles } from "@mantine/core";
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
     link: {
         display: 'block',
         paddingTop: '3rem',

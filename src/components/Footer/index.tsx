@@ -1,15 +1,15 @@
 import React from 'react'
-import { Card, Container, createStyles, Grid, Group, Text } from '@mantine/core'
-import {
-    IconBrandInstagram,
-    IconBrandFacebook,
-    IconBrandTwitter,
-    IconBrandYoutube,
-    IconBrandGithub,
-    IconBrandTelegram,
-    IconBrandMedium
-} from "@tabler/icons";
-import Link from 'next/link';
+import { Card, createStyles, Grid, Group, Text } from '@mantine/core'
+// import {
+//     IconBrandInstagram,
+//     IconBrandFacebook,
+//     IconBrandTwitter,
+//     IconBrandYoutube,
+//     IconBrandGithub,
+//     IconBrandTelegram,
+//     IconBrandMedium
+// } from "@tabler/icons";
+// import Link from 'next/link';
 
 function Footer() {
     const useStyles = createStyles(() => ({

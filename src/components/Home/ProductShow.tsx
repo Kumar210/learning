@@ -1,4 +1,4 @@
-import { Box, Grid, Title, useMantineTheme, Text, Group } from '@mantine/core'
+import { Box, Grid, Title, useMantineTheme, Text, } from '@mantine/core'
 import React, { useEffect } from 'react'
 import CardContainer from '../Card/index'
 import AOS from 'aos';
@@ -41,14 +41,11 @@ const ProductShow = () => {
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVjRZSHnOPS8bp95mBo_JQq1CvQ05IOgin6g&usqp=CAU",
             header: "New Cement"
         },
-        {
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVjRZSHnOPS8bp95mBo_JQq1CvQ05IOgin6g&usqp=CAU",
-            header: "New Cement"
-        },
+
 
     ]
     return (
-        <Box mt={theme.spacing.md} p={theme.spacing.sm} >
+        <Box mt={theme.spacing.sm} p={theme.spacing.sm} >
             <Box data-aos="fade-up-right" data-aos-duration="2000" >
                 <Title order={3}>Product Range</Title>
                 <Text size="md" p={5} >
@@ -65,7 +62,7 @@ const ProductShow = () => {
                         return (
 
 
-                            <Grid.Col xs={3} >
+                            <Grid.Col xs={3} key={i} >
 
                                 <CardContainer
                                     image={item?.image}

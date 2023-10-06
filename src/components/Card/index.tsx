@@ -1,6 +1,8 @@
 import { Button, Card, Grid, Group, Image, Modal, Table, Title, useMantineTheme } from '@mantine/core'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStyles } from "./Style";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 type CardProps = {
     image: string,
     header: string
@@ -12,6 +14,9 @@ const index: React.FC<CardProps> = (props) => {
     const { classes } = useStyles();
     const theme = useMantineTheme()
     const [modalOpen, setModalOpen] = useState<boolean>(false)
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <>
             <Card
@@ -19,11 +24,11 @@ const index: React.FC<CardProps> = (props) => {
                 p={'xl'}
                 className={classes.card}
             >
-                <Card.Section>
+                <Card.Section sx={{
+                    height: '30%'
+                }} >
 
-                    <Image src={image} alt="" sx={{
-
-                    }}
+                    <Image data-aos="zoom-in" data-aos-duration="2000" src={image} alt=""
                     />
                 </Card.Section>
                 <Group position='center' >
@@ -63,7 +68,7 @@ const index: React.FC<CardProps> = (props) => {
                 <Grid>
                     <Grid.Col xs={6}>
 
-                        <Image src={image} alt="" sx={{
+                        <Image data-aos="zoom-in" data-aos-duration="2000" src={image} alt="" sx={{
 
                         }}
                         />
