@@ -2,7 +2,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Slider from "src/components/Home/Slider";
-import ProductShow from '../components/Home/ProductShow'
+import ProductShow from '../components/ProductView/index'
 import RatingsandReviews from '../components/RatingPage/index'
 import Enquiry from '../components/enquiry/index'
 

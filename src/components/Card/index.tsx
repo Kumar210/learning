@@ -3,14 +3,17 @@ import React, { useEffect, useState } from 'react'
 import { useStyles } from "./Style";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useRouter } from 'next/router';
 type CardProps = {
     image: string,
-    header: string
+    header: string,
+    link?: string
 };
 
 const index: React.FC<CardProps> = (props) => {
-    const { image, header } = props
+    const { image, header, link } = props
     console.log(header);
+    const router = useRouter()
     const { classes } = useStyles();
     const theme = useMantineTheme()
     const [modalOpen, setModalOpen] = useState<boolean>(false)
@@ -25,18 +28,23 @@ const index: React.FC<CardProps> = (props) => {
                 className={classes.card}
             >
                 <Card.Section sx={{
-                    height: '30%'
+                    height: '30%',
                 }} >
 
                     <Image data-aos="zoom-in" data-aos-duration="2000" src={image} alt=""
+
+                        h={250}
+                        w={500}
                     />
                 </Card.Section>
                 <Group position='center' >
-
-                    <Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={() => {
-                        setModalOpen(true)
+                    <Button variant="light" color="cyan" fullWidth mt="md" radius="md" onClick={() => {
+                        link ? router.push(link) : setModalOpen(true)
                     }}>
-                        {header}
+                        <marquee scrollamount="5" direction="right">
+                            {header}
+                        </marquee>
+
                     </Button>
                 </Group>
 

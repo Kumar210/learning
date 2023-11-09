@@ -33,8 +33,6 @@ const nextConfig = (phase) => {
       domains: [
         'www.w3schools.com',
         'www.tvs-e.in',
-        // 'hyper-ready-dev.s3.amazonaws.com',
-        'kpris.s3.ap-south-1.amazonaws.com',
       ],
       minimumCacheTTL: 60,
       deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -56,11 +54,7 @@ module.exports = withBundleAnalyzer({
     domains: [
       'www.w3schools.com',
       'www.facebook.com',
-      'https:/maps.googleapis.com',
-      'www.tvs-e.in',
-      'hyper-ready-dev.s3.amazonaws.com',
-      'kpris.s3.ap-south-1.amazonaws.com',
-      'hyper-ready-prod.s3.amazonaws.com',
+      
     ],
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
